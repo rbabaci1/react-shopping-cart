@@ -1,14 +1,14 @@
 import React from 'react';
 
-const Item = ({ image, title, price }) => {
+const Item = ({ item, removeItem }) => {
   return (
     <div className='shopping-cart_item'>
-      <img src={image} alt={`${title} book`} />
+      <img src={item.image} alt={`${item.title} book`} />
 
       <div>
-        <h1>{title}</h1>
-        <p>$ {price}</p>
-        <button>Remove from cart</button>
+        <h1>{item.title}</h1>
+        <p>$ {item.price}</p>
+        <button onClick={() => removeItem(item.id)}>Remove from cart</button>
       </div>
     </div>
   );
