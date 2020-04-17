@@ -12,13 +12,11 @@ function App() {
   const [products] = useState(data);
   const [cart, setCart] = useState([]);
 
-  const addItem = (item) => {
-    if (!wasAdded(cart, item.id)) setCart([...cart, item]);
-  };
+  const addItem = (item) =>
+    !wasAdded(cart, item.id) && setCart([...cart, item]);
 
-  const removeItem = (itemId) => {
+  const removeItem = (itemId) =>
     setCart(cart.filter((item) => item.id !== itemId));
-  };
 
   return (
     <div className='App'>

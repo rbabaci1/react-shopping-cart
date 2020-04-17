@@ -8,6 +8,7 @@ const Item = ({ item, removeItem }) => {
       <div>
         <h1>{item.title}</h1>
         <p>$ {item.price}</p>
+
         <button onClick={() => removeItem(item.id)}>Remove from cart</button>
       </div>
     </div>
