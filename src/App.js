@@ -7,10 +7,11 @@ import Products from './components/Products';
 import ShoppingCart from './components/ShoppingCart';
 import ProductContext from './contexts/ProductContext';
 import CartContext from './contexts/CartContext';
+import { useLocalStorage } from 'react-use';
 
 function App() {
   const [products] = useState(data);
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useLocalStorage('cart-list', []);
 
   const addItem = (item) =>
     !wasAdded(cart, item.id) && setCart([...cart, item]);
