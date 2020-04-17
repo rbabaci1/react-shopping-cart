@@ -7,7 +7,9 @@ const Navigation = () => {
 
   return (
     <div className='navigation'>
-      <NavLink to='/'>Products</NavLink>
+      <NavLink exact to='/'>
+        Products
+      </NavLink>
 
       <NavLink to='/cart'>
         Cart <span>{cart.length}</span>
